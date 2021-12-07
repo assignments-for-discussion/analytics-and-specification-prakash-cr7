@@ -14,3 +14,8 @@ it('reports the average as NaN on an empty list', ()=> {
 it('ignores NaN in the input', ()=> {
   expect(average([1, NaN, 2])).to.be.approximately(1.5, 0.01);
 });
+
+// If input is an array of only NaN, the average is NaN
+it('reports the avarage as NaN on a list of NaN', ()=> {
+  expect(average([ NaN, NaN ])).to.be.NaN;
+})

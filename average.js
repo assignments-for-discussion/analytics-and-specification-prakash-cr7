@@ -25,7 +25,7 @@ function doesNaNSequenceExceeds(numbers) {
     numbers.forEach(element => {
         if(isNaN(element)) {
             n++
-            max = Math.max(count,max)
+            max = Math.max(n,max)
         } else n = 0
     })
     return max > maxAllowedNaNSeq

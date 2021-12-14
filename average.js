@@ -20,17 +20,14 @@ const maxAllowedNaNSeq = 3
 const maxAllowedNaNPercent = 0.2
 
 function doesNaNSequenceExceeds(numbers) {
-    let count = 1
-    let max = 1
-    for (let i = 1; i < numbers.length; i++) {
-        const flag = isNaN(numbers[i-1]) && isNaN(numbers[i])
-        if (flag) {
+    let max = 0
+    let count = 0
+    numbers.forEach(element => {
+        if(isNaN(element)) {
             count++
-        } else {
-            max = Math.max(count, max)
-            count = 1
-        }
-    }
+            max = Math.max(count,max)
+        } else count = 0
+    })
     return max > maxAllowedNaNSeq
 }
 

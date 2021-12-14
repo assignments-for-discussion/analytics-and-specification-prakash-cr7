@@ -23,11 +23,12 @@ function doesNaNSequenceExceeds(numbers) {
     let count = 1
     let max = 1
     for (let i = 1; i < numbers.length; i++) {
-        if (isNaN(numbers[i] && isNaN(numbers[i - 1]))) {
+        const flag = isNaN(numbers[i-1]) && isNaN(numbers[i])
+        if (flag) {
             count++
         } else {
             max = Math.max(count, max)
-            count = 0
+            count = 1
         }
     }
     return max > maxAllowedNaNSeq

@@ -39,8 +39,7 @@ it('reports the average as NaN if NaN sequence in input exceeds limits',
         ])).to.be.NaN;
     })
 
-it('reports the average as NaN if percentage of NaN values in input \n\
-    exceeds limits',
+it('the average is NaN if percentage of NaN values in input exceeds limits',
     () => {
         expect(average([1, 3, 5, NaN, 2, 5, 4, NaN, 5])).to.be.NaN
     })

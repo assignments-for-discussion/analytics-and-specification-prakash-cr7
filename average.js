@@ -14,21 +14,21 @@ function average(numbers) {
 }
 
 // Max number of NaN data that can appear in the input array sequently
-const maxAllowedNaNSeq = 3
+const maxAllowedNaNSequence = 3
 
 // Max fraction of NaN data that can appear in the input array
 const maxAllowedNaNPercent = 0.2
 
 function doesNaNSequenceExceeds(numbers) {
     let max = 0
-    let n = 0
+    let localCount = 0
     numbers.forEach(element => {
         if(isNaN(element)) {
-            n++
-            max = Math.max(n,max)
-        } else n = 0
+            localCount++
+            max = Math.max(localCount,max)
+        } else localCount = 0
     })
-    return max > maxAllowedNaNSeq
+    return max > maxAllowedNaNSequence
 }
 
 function doesNaNPercentExceeds(numbers) {
